@@ -12,7 +12,7 @@ export const multiply = async (base = 5, l = false, e = 10) => {
     let out = "";
 
     for (let index = 1; index <= e; index++) {
-      out += `${base} X ${index} = ${base * e}\n`;
+      out += `${base} X ${index} = ${base * index}\n`;
     }
 
     if (l) {
@@ -24,7 +24,7 @@ export const multiply = async (base = 5, l = false, e = 10) => {
 
     }
 
-    writeFileSync(`tabla-${base}.txt`, out);
+    writeFileSync(`./output/tabla-${base}.txt`, out);
 
     return `tabla-${base}.txt`;
   } catch (err) {

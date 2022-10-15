@@ -12,7 +12,7 @@ export const argv = yargs(hideBin(process.argv))
   .options('e', {
     alias: "extend",
     type: "number",
-    demandOption: false,
+    default:10,
     describe: 'number to limit number of the table'
   })
   .options("l", {
