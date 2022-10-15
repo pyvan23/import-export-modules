@@ -4,26 +4,31 @@ import Color from "colors";
 
 
 
-export const multiply = async (number = 5) => {
-    try {
-        Color.setTheme({
-            custom: ['red', 'underline']
-          });
+export const multiply = async (base = 5, l = false) => {
+  try {
+    Color.setTheme({
+      custom: ['red', 'underline']
+    });
 
-    console.log("**************");
-    console.log(Color.cyan(" T A B L E S "));
-    console.log("**************");
-
+   
     let out = "";
 
     for (let index = 1; index <= 10; index++) {
-      out += `${number} X ${index} = ${number * index}\n`;
+      out += `${base} X ${index} = ${base * index}\n`;
     }
-    console.log(out);
 
-    writeFileSync(`tabla-${number}.txt`, out);
+    if (l) {
+      console.log("**************");
+      console.log(Color.cyan(` T A B L E : ${base} `));
+      console.log("**************");
+  
+      console.log(out);
 
-    return `tabla-${number}.txt`;
+    }
+
+    writeFileSync(`tabla-${base}.txt`, out);
+
+    return `tabla-${base}.txt`;
   } catch (err) {
     throw err;
   }
