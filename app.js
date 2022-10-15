@@ -4,7 +4,7 @@ console.clear();
 
 
 //feedback errors
-multiply(argv.b, argv.l)
+multiply(argv.b, argv.l,argv.e)
   .then((file) => console.log(file, "created"))
   .catch((err) => console.log(err));
 
